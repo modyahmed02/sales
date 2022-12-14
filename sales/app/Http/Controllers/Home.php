@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Name;
 
 class Home extends Controller
 {
     //
     public function index (){
-        echo "welcome Dear !";
+        return view('front.home');
     }
     public function create(){
 
