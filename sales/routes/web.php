@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Atefcontroller;
 use App\Http\Controllers\Testinvokable;
 use App\Http\Controllers\TestResorseController;
+use App\Http\Controllers\jobscontroller;
 
 
 
@@ -19,10 +20,55 @@ use App\Http\Controllers\TestResorseController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/jobs',[jobscontroller::class,'index'])->name('jobindex');
+Route::get('/create',[jobscontroller::class,'create'])->name("createjob");
+Route::post('/store',[jobscontroller::class,'store'])->name("storejob");
+Route::get('/edit/{id}',[jobscontroller::class,'edit'])->name('editjob');
+Route::post('/update/{id}',[jobscontroller::class,'update'])->name("updatejob");   
+Route::get('/delete/{id}',[jobscontroller::class,'delete'])->name('deletejob');
+Route::post('/ajax_search',[jobscontroller::class,'ajax_search'])->name("ajax_search");  
+/*
+Route::get('/',function()(
+return view('master');s
+));
+*/
 
+/*
+Route::get('/admin/getlogin',function(Request $request){
+    if($request ->ismethod("get")) (
+        echo"YES Get";
+    );
+    })
+   }) ->name('admin.loadlogin');
+   */
 
+/*
+Route::get('/admin/getlogin',function(Request $request){
+    if($request ->routels('admin'){
+   
+      echo $httpHost=$request ->httpHost();
+    })
+   }) ->name('admin.loadlogin');
+   */
+   
+/*
+Route::get('/admin/getlogin',function(Request $request){
+   if($request ->routels('admin'){
+     echo $url=$request ->url(); echo"<br>";
+     echo $fullurl=$request ->fullurl();
+   })
+  }) ->name('admin.loadlogin');
+  */
+  
+/*
+Route::get('/admin/getlogin',function(Request $request){
+  echo $request ->phth();
+})
+*/
+/*
 Route::get("/",[Atefcontroller::class, 'index'] );
 Route::resource('/atef',TestResorseController::class);
+*/
 /*
 Route::get("/create",[Atefcontroller::class, 'create'] );
 Route::post("/store",[Atefcontroller::class, 'store'] );
